@@ -1,4 +1,4 @@
-﻿import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+﻿import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Login from './pages/login.jsx'
 import Dashboard from './pages/dashboard.jsx'
 import { Outlet } from 'react-router-dom'
@@ -10,6 +10,9 @@ import Workspace from './pages/workspace.jsx'
 import Sidebar from './component/sidebar.jsx'
 import Header from './component/Header.jsx'
 import TaskProvider from './component/TaskProvider.jsx'
+
+// GitHub Pages serves static files; hash routes keep refreshes on index.html.
+const AppRouter = import.meta.env.PROD ? HashRouter : BrowserRouter
 
 function SidebarPreviewLayout() {
   return <div className="app-sidebar-preview">
@@ -23,7 +26,7 @@ function PagePreview({ title, children }) {
 }
 
 export default function App() {
-  return <BrowserRouter><TaskProvider><Routes>
+  return <AppRouter basename={import.meta.env.PROD ? undefined : import.meta.env.BASE_URL}><TaskProvider><Routes>
     <Route path="/" element={<Navigate to="/login" replace />} />
     <Route path="/login" element={<Login />} />
     <Route path="/dashboard" element={<Dashboard />} />
@@ -35,5 +38,5 @@ export default function App() {
       <Route path="/usersetting" element={<PagePreview title="User Setting"><UserSetting /></PagePreview>} />
       <Route path="/workspace" element={<PagePreview title="Project"><Workspace /></PagePreview>} />
     </Route>
-  </Routes></TaskProvider></BrowserRouter>
+  </Routes></TaskProvider></AppRouter>
 }
