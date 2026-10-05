@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Header Noto Sans';
+  src: url('../assets/header-noto-sans-600.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+.app-header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1517px;
+  height: 90px;
+  padding: 24px;
+  border: 0;
+  border-radius: 200px;
+  background: #fff;
+  box-shadow: none;
+  color: #000;
+  color-scheme: light;
+  font-family: 'Header Noto Sans', 'Noto Sans', 'Segoe UI', sans-serif;
+  letter-spacing: normal;
+}
+
+.app-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1455px;
+  min-width: 0;
+}
+
+.app-header__title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: #000;
+  font-family: inherit;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-header__actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-header__profile {
+  display: block;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.app-header__theme-icon,
+.app-header__control {
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-header__theme-icon,
+.app-header__control--theme { width: 25px; height: 25px; }
+.app-header__control--profile { width: 30px; height: 30px; }
+.app-header__moon { display: block; }
+
+.app-header__control {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.app-header__control:focus-visible {
+  outline: 2px solid #1c64f2;
+  outline-offset: 4px;
+}

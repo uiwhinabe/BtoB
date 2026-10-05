@@ -1,0 +1,54 @@
+﻿@font-face {
+  font-family: 'Sidebar Noto Sans';
+  src: url('../assets/header-noto-sans-600.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sidebar Noto Sans';
+  src: url('../assets/sidebar-noto-sans-700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+.app-sidebar { box-sizing: border-box; display: flex; flex-direction: column; align-items: center; flex: 0 0 340px; width: 340px; min-height: max(100svh, 923px); padding: 49px 0 0; border: 0; background: #fff; color: #000; color-scheme: light; font-family: 'Sidebar Noto Sans', 'Noto Sans', sans-serif; letter-spacing: normal; text-align: left; }
+.app-sidebar__brand { display: flex; align-items: center; gap: 16px; height: 54px; color: #111928; font-size: 36px; font-weight: 700; line-height: 1.5; text-decoration: none; }
+.app-sidebar__logo { position: relative; display: block; width: 48px; height: 48px; }
+/* Preserve the SVG dimensions and reuse the login logo at half scale. */
+.app-sidebar__logo-layers { position: absolute; width: 96px; height: 96px; transform: scale(.5); transform-origin: top left; }
+.app-sidebar__logo-layers img { position: absolute; display: block; }
+.app-sidebar__logo-back { top: 0; left: 2.45%; }
+.app-sidebar__logo-middle { top: 16.6%; left: 18.99%; }
+.app-sidebar__logo-front { top: 10.75%; left: 0; }
+.app-sidebar__navigation { display: flex; flex-direction: column; gap: 40px; width: 251px; margin-top: 80px; margin-left: 1px; }
+.app-sidebar__menu { box-sizing: border-box; display: flex; align-items: center; width: 100%; height: 60px; padding: 15px 30px; border: 0; border-radius: 15px; background: transparent; color: #000; font-size: 20px; font-weight: 600; line-height: 1.25; text-decoration: none; white-space: nowrap; }
+.app-sidebar__menu--active { background: #bee3ff; }
+.app-sidebar__menu:not(.app-sidebar__menu--active):not(.app-sidebar__menu--unavailable):hover { background: #f5f7fa; }
+.app-sidebar__menu--unavailable { cursor: default; }
+.app-sidebar__icon-slot { position: relative; flex: 0 0 70px; height: 30px; }
+.app-sidebar__icon { position: absolute; display: block; left: 0; top: 50%; transform: translateY(-50%); }
+.app-sidebar__icon--home { top: calc(50% + .25px); }
+.app-sidebar__icon--project { top: calc(50% + 2px); }
+.app-sidebar__icon--team { top: calc(50% + .5px); left: .5px; }
+.app-sidebar__task-submenu { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; width: 168px; height: 80px; margin-left: 41px; padding-left: 41px; border-left: 1px solid #0000004d; }
+.app-sidebar__sub-link { padding: 5px 10px; border-radius: 5px; color: #000; font-size: 15px; font-weight: 600; line-height: 1.25; text-decoration: none; }
+.app-sidebar__sub-link--active { background: #b9cad7; }
+.app-sidebar__settings { width: 250px; margin-top: 180px; }
+.app-sidebar--task-submenu .app-sidebar__settings { margin-top: 60px; }
+.app-sidebar__user { display: flex; align-items: center; gap: 20px; margin-top: 80px; margin-left: 1px; }
+.app-sidebar__avatar { position: relative; flex: 0 0 60px; width: 60px; height: 60px; overflow: hidden; border-radius: 3135.694px; }
+.app-sidebar__avatar img { position: absolute; display: block; left: -2.53%; top: -3%; width: 106%; height: 106%; }
+.app-sidebar__user-details { display: flex; align-items: center; gap: 15px; }
+.app-sidebar__user-text { display: flex; flex-direction: column; gap: 5px; width: 144px; }
+.app-sidebar__user-name { margin: 0; color: #000; font-size: 17.333px; font-weight: 600; line-height: 1.5; }
+.app-sidebar__user-role { margin: 0; color: #00000080; font-size: 12px; font-weight: 700; line-height: 1.25; text-align: right; }
+.app-sidebar__user-menu { display: block; flex-shrink: 0; width: 24px; height: 24px; margin: 0; padding: 0; border: 0; background: transparent; }
+button.app-sidebar__user-menu { cursor: pointer; }
+.app-sidebar__user-menu img { display: block; }
+.app-sidebar a:focus-visible, .app-sidebar button:focus-visible { outline: 2px solid #1c64f2; outline-offset: 4px; }
+/* Preview shell: layout only; dashboard content remains unchanged. */
+.app-sidebar-preview { display: flex; min-height: 100svh; background: #f5f7fa; }
+.app-sidebar-preview__content { box-sizing: border-box; flex: 1; min-width: 0; padding: 30px 31px; }
+#root:has(.app-sidebar-preview) { width: 100%; max-width: none; margin: 0; border: 0; }
+
